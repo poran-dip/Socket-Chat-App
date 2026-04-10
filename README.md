@@ -1,33 +1,25 @@
-# 💬 Multi-Client Chat Server (Python)
+# 💬 Socket Chat App
 
-A simple **real-time chat server** built using Python sockets and threading. This server allows multiple clients to connect simultaneously and exchange messages in real time.
+A simple **real-time chat application** built with Node.js, Express, and Socket.IO. Multiple clients can connect and exchange messages instantly through a clean browser-based UI.
 
 ---
 
 ## 🚀 Features
 
-* 🔗 Supports multiple client connections
-* ⚡ Real-time message broadcasting
-* 🧵 Multi-threaded handling of clients
-* 🖥️ Lightweight and easy to run
-* 📡 Uses TCP socket communication
+- 🔗 Supports multiple client connections
+- ⚡ Real-time bidirectional messaging via WebSockets
+- 🧵 Event-driven, non-blocking architecture
+- 🖥️ Browser-based frontend — no installation needed for clients
+- 📡 Powered by Socket.IO over HTTP
 
 ---
 
 ## 🛠️ Technologies Used
 
-* Python 3
-* `socket` module
-* `threading` module
-
----
-
-## 📂 How It Works
-
-1. The server listens on a specified host and port.
-2. Multiple clients can connect to the server.
-3. Each client connection runs on a separate thread.
-4. Messages sent by one client are broadcast to all other connected clients.
+- **Runtime**: Node.js
+- **Server framework**: Express
+- **WebSocket library**: Socket.IO
+- **Frontend**: Vanilla HTML, CSS, JavaScript
 
 ---
 
@@ -36,51 +28,54 @@ A simple **real-time chat server** built using Python sockets and threading. Thi
 ### 1. Clone the repository
 
 ```bash
-git clone <your-repo-link>
-cd <repo-folder>
+git clone https://github.com/RajdeepChoudhury/Socket-Chat-App.git
+cd Socket-Chat-App
 ```
 
-### 2. Run the server
+### 2. Install dependencies
 
 ```bash
-python server.py
+npm install
 ```
 
-### 3. Connect clients
+### 3. Run the server
 
-You can connect using:
+```bash
+npm run start
+```
 
-* Custom Python client
-* Telnet (for testing)
-* Any TCP-based client application
+### 4. Open the app
+
+Navigate to `http://localhost:3000` in your browser. Open multiple tabs to simulate multiple users.
 
 ---
 
 ## 📌 Code Overview
 
-* **Socket Initialization**: Creates and binds the server
-* **Threading**: Handles multiple clients concurrently
-* **Broadcast Function**: Sends messages to all connected clients
-* **Client Handler**: Manages communication for each client
+1. The Express server serves the frontend from the `public/` directory.
+2. On page load, the client connects to the server via Socket.IO.
+3. When a user sends a message, it's emitted to the server as a `chatMessage` event.
+4. The server broadcasts the message to all other connected clients.
+5. Each client renders incoming messages in real time.
 
 ---
 
 ## ⚠️ Limitations
 
-* No username support
-* No encryption (not secure for production)
-* No GUI (console-based)
-* No message history
+- No persistent usernames or authentication
+- No encryption (not secure for production)
+- No message history
+- Single chat room only
 
 ---
 
 ## 🔮 Future Improvements
 
-* ✅ Add usernames for clients
-* 🔐 Implement encryption (SSL/TLS)
-* 💬 Private messaging support
-* 🖥️ Build a frontend UI (web or app)
-* 📁 Store chat history
+- ✅ Persistent usernames / user sessions
+- 🔐 Implement encryption (SSL/TLS)
+- 💬 Private messaging support
+- 📁 Store chat history
+- 🏠 Multiple chat rooms
 
 ---
 
@@ -92,4 +87,4 @@ Feel free to fork this project and improve it. Pull requests are welcome!
 
 ## 👨‍💻 Author
 
-Developed as a simple backend chat server using Python sockets.
+Built as a lightweight real-time chat server using Node.js and Socket.IO.

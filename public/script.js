@@ -26,6 +26,6 @@ function displayMessage(sender, message) {
   messagesDiv.scrollTop = messagesDiv.scrollHeight;
 }
 
-messageInput.addEventListener('keydown', (e) => {
-  if(e.key === "Enter") sendMessage();
-})
+messageInput.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") sendMessage();
+});
