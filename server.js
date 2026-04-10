@@ -12,9 +12,9 @@ app.use(express.static(path.join(__dirname, "public")));
 io.on("connection", (socket) => {
   console.log("New user connected:", socket.id);
 
-  socket.on("chatMessage", (message) => {
-    console.log("Message received:", message);
-    socket.broadcast.emit("chatMessage", message);
+  socket.on("chatMessage", ({ name, message }) => {
+    console.log(`Message from ${name}:`, message);
+    socket.broadcast.emit("chatMessage", { name, message });
   });
 
   socket.on("disconnect", () => {
